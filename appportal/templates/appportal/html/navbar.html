@@ -1,0 +1,150 @@
+<style>
+    .w-100{
+        width:100px;
+        height:60vh;
+      }
+    .nav-link{
+      color:white !important;
+      font-size:20px;
+      font-family:monotype,sans;
+    }
+    a:hover{
+      color:rgb(17, 236, 10) !important;
+    }
+    .dropdown-item{
+      color:skyblue !important;
+    }
+    /* body{
+    background-color: rgb(208, 38, 157);
+    } */
+
+
+    .dropbtn {
+  background-color:red;
+  color: white;
+  padding: 8px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #69a9d7;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: white}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color:blue;
+}
+  </style>
+  <nav class="navbar navbar-expand-lg"style="background-color:red;">
+    <div class="container-fluid">
+      <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{'/'}}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{'/contactus'}}">contactus</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{'/AboutUs'}}">AboutUs</a>
+          </li>
+
+          
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{'/feedback'}}">Feedback</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="{{'/sportsdetails'}}">SportsWeoffer</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" href="{{'/donorlist'}}">Donor List</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="{{'/plandetails'}}">MembershipPlan</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" href="{{'/member_registration'}}">Registration Form</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{'/member_login'}}">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#faqdiv">FAQS</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{'/experience'}}">Donor Experience</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="{{'/member_experience'}}">Register Experience</a>
+          </li>
+          
+<!-- 
+          <li class="nav-item">
+            <a class="nav-link" href="{{'/experience'}}">Donor Experience</a>
+          </li> -->
+
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              About Blood
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="{{'/bloodgroup'}}">Blood Group</a></li>
+              <li><a class="dropdown-item" href="{{'/diseases'}}">Diseases</a></li>
+              <li><a class="dropdown-item" href="{{'/donationtype'}}">Donation Type</a></li>
+               -->
+              <!-- <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+
+              <div class="dropdown">
+                <button class="dropbtn">About Blood</button>
+                <div class="dropdown-content">
+                <a href="{{'/bloodgroup'}}">Blood Group</a>
+                <a href="{{'/diseases'}}">Disease</a>
+                <a href="{{'/donationtype'}}">Donation Type</a>
+                </div>
+              </div>
+              
+            </ul>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li> -->
+        </ul>
+        <!-- <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form> -->
+      </div>
+    </div>
+  </nav>

@@ -1,0 +1,70 @@
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aboutus page</title>
+    <link rel="icon" href="{% static 'appportal/images/favicon6.jpg'%}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style> 
+        img {
+          width: 100px;
+          height: 100px;
+          background: rgb(19, 29, 170);
+          transition: width 2s, height 2s, transform 2s;
+        }
+        
+        img:hover {
+          width: 300px;
+          height: 300px;
+          transform: rotate(360deg);
+        }
+        </style>
+</head>
+<body>
+    {% include 'appportal/html/navbar.html'%}
+    <h1 style="text-align:center">About Raj Hospital</h1>
+    <div style="width:25%;height:300px;float:left">
+        
+        <div class=" "style="margin-top:70px;width:20%;" > <img style="width:300px;height:300px;border-radius:10%;margin-top:0px"src="{% static 'appportal/images/aboutus.jpg'%}">
+           
+        </div>
+    </div>
+    <div style="width:90%;text-indent: 40px;"><p style="margin-top:100px;margin-left:40px;">The Indian Red Cross is a voluntary humanitarian organization having a network of over 1100 branches throughout the country, providing relief in times of disasters/emergencies and promotes health & care of the vulnerable people and communities. It is a leading member of the largest independent humanitarian organization in the world, the International Red Cross & Red Crescent Movement. The movement has three main components, the International Committee of Red Cross (ICRC),  National Societies and International Federation of Red Cross and Red Crescent Societies.
+
+        The Mission of the Indian Red Cross is to inspire, encourage and initiate at all times all forms of humanitarian activities so that human suffering can be minimized and even prevented and thus contribute to creating more congenial climate for peace.
+    </p>
+    <br>
+    <h2 style="margin-left:300px;">History of Raj Hospital and Red Crescent Movement</h2>
+    <p style="margin-top:30px">Young Swiss businessman, Jean Henry Dunant was appalled by the condition of the wounded soldiers he happened to see in the battle field of Solferino , Italy in 1859 during the Franco - Austrian war. He arranged relief services with the help of the local community immediately. He wrote the book 'Memory of Solferino' suggesting that a neutral organization be established to aid the wounded soldiers in times of war. Just a year after the release of this book, an international conference was convened in Geneva to consider the suggestions of Henry Dunant and thus the Red Cross Movement was born. International Red Cross Movement was established by Geneva Convention of 1864. The name and the emblem of the movement are derived from the reversal of the Swiss national flag, to honor the country in which Red Cross was found.</p>
+   <h2 style="margin-top:30px;">Origin of Indian Raj Hospital Society</h2>
+   <p>
+    During the first world war in 1914, India had no organization for relief services to the affected soldiers, except a branch of the St. John Ambulance Association and by a Joint Committee of the British Red Cross. Later, a branch of the same Committee was started to undertake the much needed relief services in collaboration with the St. John Ambulance Association in aid of the soldiers as well as civilian sufferers of the horrors of that great war. A bill to constitute the Indian Red Cross Society, Independent of the British Red Cross, was introduced in the Indian Legislative Council on 3rd March 1920 by Sir Claude Hill, member of the Viceroy's Executive Council who was also Chairman of the Joint war Committee in India . The Bill was passed on 17th March 1920 and became Act XV of 1920 with the assent of the Governor General on the 20th March 1920 .
+
+On 7th June 1920 , fifty members were formally nominated to constitute the Indian Red Cross Society and the first Managing Body was elected from among them with Sir Malcolm Hailey as Chairman.
+
+Indian Red Cross Society is a member of the International Federation of Red Cross and Red Crescent Movement. Relations between the IRCS and the India Delegation of the Federation are strong.
+
+Indian Red Cross Society has partnership with National Red Cross and Red Crescent Societies, St.John Ambulance, International Federation of Red Cross and Red Crescent Movement (IFRC), International Committee of the Red Cross (ICRC ), Multinational firms. Individuals and others in supporting IRCS activities. It also coordinates with Indian Government and other agencies ( UNDP, WHO etc )
+   </p>
+<h2>Raj Hospital Emblem</h2>
+<p>
+    Red Cross on a white background, is the Emblem of Red Cross, recognized in 1864 as the distinctive sign for medical relief teams on the battle field.
+
+In the Russo-Turkish war the Ottoman empire used a Red Crescent in place of the Red Cross. Egypt too opted for the Red Crescent while Persia chose a Red Lion on a white background. These symbols were written and accepted into the 1929 Geneva Conventions. The IRCS adopted RED CROSS as its emblem.
+
+The National Society make use of the emblem as an indicative device in peacetime and during armed conflicts within the limits stipulated in national legislation, the regulations and its statutes only for activities consistent with the principles set out by International Federation of the Red Cross and Red Crescent.
+
+During the General Assembly and the council of Delegates in November 2005 at Geneva, Red Crystal has been adopted as another emblem for the Red Cross Red Crescent movement.
+</p>
+</div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+    {% include 'appportal/html/footer.html'%}
+</body>
+</html>

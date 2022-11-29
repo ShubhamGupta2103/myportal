@@ -1,0 +1,252 @@
+
+<html lang="en">
+  {% load static %}
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Life Line</title>
+      <link rel="icon" href="{% static 'appportal/images/favicon6.jpg'%}">
+      
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <style>
+        
+        .w-100{
+          width:100px;
+          height:70vh;
+        }
+        .card-img-top{
+          height:15vw;
+          object-fit: cover;
+        }
+        /* body{
+        background-image:linear-gradient(to right,blue,white,cyan)
+        } */
+      </style>
+  </head>
+  <body>
+      <div style="background-color:brown;width:100%;height:80px;">
+        <div style="background-color:orange;width:33%;height:80px;float:left;"><img style="width:70%;height:110px;margin-left:px;border-radius: 20px;" src="{% static 'appportal/images/lifeline2.png'%}"></div>
+        <div style="background-color:orange;width:33%;height:80px;float:left;"><i class='fas fa-phone-square-alt' style="color:blue;margin-left: 170px;font-size:20px;margin-top:20px"> Whatsapp Number</i><p style="margin-left:170px">(+91)7084452413 </p></div>
+        <div style="background-color:orange;width:34%;height:80px;float:left;"><i class="fa fa-envelope" style="color:blue;margin-left: 190px;font-size:20px;margin-top:20px"> Email</i><p style="margin-left:200px">shubhamgupta7845@gmail.com </p></div>
+
+      </div>
+      
+     
+      <!-- nav start from here -->
+      {% include 'appportal/html/navbar.html'%}
+  
+        <!-- nav bar end here -->
+        <!-- carosul code start from here -->
+        <div style="width:100%;height:500px;">
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="2000000">
+              <img style="width:100%;height:500px" src="{% static 'appportal/images/life16.jpg'%}" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                
+                
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="">
+              <img style="width:100%;height:500px" src="{% static 'appportal/images/life15.jpg' %}" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                
+                
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img style="width:100%;height:500px" src="{% static 'appportal/images/life13.jpg'%}" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                
+                
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div> 
+
+
+      
+      <!-- <div style="width:100%;height: 400px;background-color:blueviolet">
+  
+      </div> -->
+    </div>
+    <hr style="background-color:blue;border-width:10px;border-color:blueviolet;border-style:solid">
+  
+  
+      <div class="container">
+      <div class="row">
+        {% for ev in compaign_key %}
+        <div class="col-4">
+          <div class="card" style="width: 18rem;">
+            <img src="/media/{{ev.pic}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{ev.Campaign_Name}}</h5>
+              <h5 class="card-title">{{ev.Organizer_Name}}</h5>
+              <h5 class="card-title">Venue:{{ev.Venue}}</h5>
+              
+              <p class="card-text">{{ev.Description}}</p>
+              <h5 class="card-title">Date:{{ev.Date}}</h5>
+              <a href="{{'https://www.mayoclinic.org/tests-procedures/blood-donation/about/pac-20385144'}}" class="btn btn-primary">Blood Camp</a>
+            </div>
+          </div>
+  
+  
+        </div>
+  
+      {%endfor%}
+  
+  
+      </div>
+     </div> 
+       <!-- <h1 style="text-align:center;color:rgb(212, 30, 130)">Sports Academy</h1> -->
+      <!-- <img src="{% static 'academy/images/pics13.jpg'%}" alt="this is a pic" style="width:200px;height:200px">  -->
+      <div class="" id="faqdiv">
+  
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <b>Can I donate blood if I have recently had a vaccination?</b>
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong></strong> You may donate blood after most vaccinations if you're feeling well. You'll have to wait to donate for two to four weeks after being vaccinated for chickenpox, measles, mumps, rubella or smallpox, or receiving the oral polio vaccine.
+
+                If you've had a COVID-19 vaccination, discuss your eligibility for donating blood with center staff.
+
+
+              </div>
+            </div>
+          </div>
+          
+          
+        
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <b> Can blood be manufactured?</b>
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong></strong> There is no substitute for human blood — all transfusions use blood from a donor. The inventory of donated blood must be constantly replenished. Donated platelets can be stored for use for as long as five days. Donated red blood cells can be stored for use for up to 42 days.
+              </div>
+            </div>
+          </div>
+
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <b> How is my health information protected?</b>
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong></strong> Your medical record is viewed only as needed by Mayo Clinic Blood Program nurses and physicians. Before you donate blood, you must sign an Authorization to Release Protected Health Information. Eligible 16- and 17-year-old donors will need to have a parent or guardian sign their forms. If you have questions about protecting the privacy of your health information, please contact the Mayo Clinic Blood Donor Program.
+
+
+              </div>
+            </div>
+          </div>
+
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <b> Can I donate blood?</b>
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong></strong> To donate blood, you must weigh at least 110 pounds (about 50 kilograms) and be at least 16 or 17 years old, depending on the law in your state. Some states allow legal minors to donate with parental permission. You must be in good health and able to pass the physical and a confidential health-history assessment to help make sure blood donation is safe for both you and the recipient of the blood.
+
+
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <b> How long after you donate blood can it be used?</b>
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong></strong> All blood donations are processed and available for use between 24 and 48 hours after collection. Whole blood is processed into components (red cells, platelets, plasma). After processing, the red cells can be stored for up to 42 days.
+
+
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <b> How do whole blood donation and apheresis differ?</b>
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong></strong> Blood contains several components, including red cells, platelets and plasma. During a whole blood donation, you typically donate a pint (about a half liter) of whole blood. During apheresis you're hooked up to a machine that collects and separates blood components and returns unused components to you. Apheresis takes up to two hours, which is longer than it takes to donate whole blood. With apheresis collection of plasma and platelets, you may be able to give more frequently than you can with whole blood donation.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              <b>Can I donate if I recently had a tattoo or ear or body piercing?</b>
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong></strong>Getting a tattoo or piercing recently from a licensed establishment does not make you ineligible to donate blood.
+              </div>
+            </div>
+          </div> 
+          
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <b>Can I donate blood if I've tested positive for coronavirus disease 2019 (COVID-19)?</b>
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong></strong> The Food and Drug Administration suggests waiting to donate blood for at least 14 days after a positive diagnostic test for COVID-19 without symptoms or for at least 14 days after symptoms of COVID-19 have completely cleared up. Those who have tested positive for COIVD-19 antibodies but didn't have a diagnostic test and never developed symptoms can donate without a waiting period or having a diagnostic test done before donation.
+
+                The Mayo Clinic Blood Donor Program doesn't test blood donors for the presence of the SARS-CoV-2 virus.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+      {% include 'appportal/html/footer.html'%}
+  </body>
+  </html>

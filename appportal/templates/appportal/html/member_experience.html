@@ -1,0 +1,89 @@
+<html lang="en">
+  {%load static%}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>member_experience</title>
+    <link rel="icon" href="{% static 'appportal/images/favicon6.jpg'%}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+</head>
+<body>
+    {% include 'appportal/html/navbar.html'%}
+
+    {%if messages %}
+{% for m in messages%}
+<!-- <h1 class="text-{{m.tags}}">{{m}}</h1> -->
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>{{m}}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+{%endfor%}
+
+
+{%endif%}
+    <h1 style="text-align:center;color:rgb(26, 61, 201)">Please Share Your Experience</h1>
+    
+    <div class="row mt-3"style="margin-left:450px;">
+      
+      <div class="col-6 bg-info">
+   <!-- <form method="POST" action="/feedback/">
+    {% csrf_token %}
+  <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Name</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" name="txtname" placeholder="Enter Your Name ">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Enter yor feedback</label>
+      <textarea class="form-control" name="txtfeedback" rows="3" placeholders="Enter your feedback"></textarea>
+    </div>
+
+    <div class="mb-3">
+      <lable for="rating" class="form-lable"> Rating </lable>
+    <select name="txtrate" class="form-select">
+        <option value="default">Select Rating</option>
+        <option value="good">1</option>
+        <option value="better">2</option>
+        <option value="best">3</option>
+        <option value="excellent">4</option>
+        <option value="outstanding">5</option>
+    </select>
+  </div>
+  <button type="submit" class=" btn btn-primary">Submit</button>
+    
+  </form>
+</div>
+</div> -->
+<form  class="needs-validation container" novalidate method="POST" action="/member_experience/">
+  {% csrf_token %}
+
+ <div class="mb-3">
+  
+   <label for="name" class="form-label">Enter your Doner_id</label>
+   <input type="text" required class="form-control" name="txtdonorid" placeholder="Enter your Doner_id">
+   
+ </div>
+ <div class="mb-3">
+    <label for="name" class="form-label">Enter your Subject</label>
+    <input type="text" required class="form-control" name="txtsubject" placeholder="Enter your Subject">
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Enter your Remarks</label>
+    <textarea class="form-control" required name="txtremarks" rows="3" placeholders="Enter your Remarks"></textarea>
+  </div>
+  <button type="reset" class="btn btn-success">Reset</button>
+ <button type="submit" class=" btn btn-primary">Submit</button>
+</form>
+</div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+    <script src="{%static 'appportal/js/validation.js'%}"></script>
+    {% include 'appportal/html/footer.html'%}
+</body>
+</html>
