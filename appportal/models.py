@@ -7,7 +7,7 @@ class BloodDonor(models.Model):
     Donerid=models.CharField(primary_key=True,max_length=20)
     Password=models.CharField(max_length=45)
     Name=models.CharField(max_length=30)
-    Address=models.TextField(45)
+    Address=models.TextField()
     Email=models.EmailField(max_length=45)
     Gender=models.CharField(max_length=6)
     Phone=models.CharField(max_length=10)

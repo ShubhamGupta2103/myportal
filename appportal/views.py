@@ -9,25 +9,25 @@ def home(request):
     compaign_dict={
         "compaign_key":compaign_objects
     }
-    return render(request,'appportal/html/index.html',compaign_dict)
+    return render(request,'index.html',compaign_dict)
 
 
 
 def bloodgroup(request):
-    return render(request,'appportal/html/bloodgroup.html')
+    return render(request,'bloodgroup.html')
 
 def AboutUs(request):
-    return render(request,'appportal/html/aboutus.html')
+    return render(request,'aboutus.html')
 
 def donationtype(request):
-    return render(request,'appportal/html/donationtype.html')
+    return render(request,'donationtype.html')
 
 def diseases(request):
-    return render(request,'appportal/html/diseases.html')
+    return render(request,'diseases.html')
 
 def member_login(request):
     if request.method=="GET":
-      return render(request,'appportal/html/login.html')
+      return render(request,'login.html')
 
     if request.method=="POST":
         donor_id=request.POST["donorid"]
@@ -39,18 +39,18 @@ def member_login(request):
             request.session["donor_session"]=donor_id#builtin dictionary 
             
             donor_object={"donor_data":donor_query_set}
-            return render(request,'appportal/html/member/member_home.html',donor_object)
+            return render(request,'member/member_home.html',donor_object)
             
 
         else:
             messages.error(request,"Invalid Credential")
-            return render(request,'appportal/html/login.html')
+            return render(request,'login.html')
 
 def member_registration(request):
     if request.method=="GET":
         plan_objects=BloodDonor.objects.all()
         plan_dict={"plan_key":plan_objects}
-        return render(request,'appportal/html/registration.html',plan_dict)
+        return render(request,'registration.html',plan_dict)
 
     if request.method=="POST":
         member_id=request.POST["txtdonorid"]
@@ -68,11 +68,11 @@ def member_registration(request):
         # len(member_age)>2 or int(member_age)<0:
         if int(member_age)<18 or int(member_age)>60:
              messages.success(request,"You are not eligible for Blood Donation")
-             return render(request,'appportal/html/registration.html')
+             return render(request,'registration.html')
 
         elif len(member_phone)>10 or int(member_phone)<10 or int(member_phone)<0:
              messages.success(request,"Please enter a valid phone number")
-             return render(request,'appportal/html/registration.html')
+             return render(request,'registration.html')
 
 
         else:
@@ -80,7 +80,7 @@ def member_registration(request):
             new_member.save()
             print("Member registered successfully")
             messages.error(request,"Thank you for being a Member")
-            return render(request,'appportal/html/registration.html')
+            return render(request,'registration.html')
 
 
 def member_edit_profile(request):
@@ -94,7 +94,7 @@ def member_edit_profile(request):
             "donor_data":member_object
         }
 
-        return render(request,'appportal/html/member/member_editprofile.html',member_dict)
+        return render(request,'member/member_editprofile.html',member_dict)
 
     if request.method=='POST':
         ph=request.POST["Phone"]
@@ -111,7 +111,7 @@ def member_edit_profile(request):
 
         messages.success(request,"Profile updated successfully")
 
-        return render(request,'appportal/html/member/member_editprofile.html',member_dict)
+        return render(request,'member/member_editprofile.html',member_dict)
 
 
 def member_logout(request):
@@ -136,12 +136,12 @@ def member_view_profile(request):
             "donor_data":member_object
         }
 
-        return render(request,'appportal/html/member/member_view_profile.html',member_dict)
+        return render(request,'member/member_view_profile.html',member_dict)
         
 
 def feedback(request):
     if request.method=="GET":
-        return render(request,'appportal/html/feedback.html')
+        return render(request,'feedback.html')
     if request.method=="POST": #request.POST is dictionary and control names are keys here
         user_name=request.POST["txtname"]
         user_email=request.POST["txtemail"]
@@ -150,11 +150,11 @@ def feedback(request):
         m=FeedBack(Name=user_name,Email=user_email,Rating=user_rate,Feedbacktext=user_feedback)# object creation
         m.save()# object saving and it will store data into Contact table using ORM
         print("feedback saved successfully")
-        return render(request,'appportal/html/feedback.html')
+        return render(request,'feedback.html')
 
 def contactus(request):
     if request.method=="GET":
-        return render(request,'appportal/html/contactus.html')
+        return render(request,'contactus.html')
     if request.method=="POST": #request.POST is dictionary and control names are keys here
         user_name=request.POST["txtname"]
         user_email=request.POST["txtemail"]
@@ -164,11 +164,11 @@ def contactus(request):
         c.save()# object saving and it will store data into Contact table using ORM
         print("Contact saved successfully")
         messages.success(request,"Thank you for contacting us ")
-        return render(request,'appportal/html/contactus.html')
+        return render(request,'contactus.html')
 
 def member_experience(request):
     if request.method=="GET":
-        return render(request,'appportal/html/member_experience.html')
+        return render(request,'member_experience.html')
 
     if request.method=="POST": #request.POST is dictionary and control names are keys here
         user_name=request.POST["txtdonorid"]
@@ -179,7 +179,7 @@ def member_experience(request):
         c.save()# object saving and it will store data into Contact table using ORM
         print("Experience saved successfully")
         messages.success(request,"Thank you for sharing your experience ")
-        return render(request,'appportal/html/member_experience.html')
+        return render(request,'member_experience.html')
 
 def donorlist(request):
     donor_objects=BloodDonor.objects.all()#it returns queryset
@@ -189,7 +189,7 @@ def donorlist(request):
         "donor_data":donor_objects
     }
 
-    return render(request,'appportal/html/donorlist.html',donor_dict)
+    return render(request,'donorlist.html',donor_dict)
 
 def experience(request):
     donor_objects=Experience.objects.all()#it returns queryset
@@ -199,7 +199,7 @@ def experience(request):
         "donor_data":donor_objects
     }
 
-    return render(request,'appportal/html/experience.html',donor_dict)
+    return render(request,'experience.html',donor_dict)
 
 
 def member_edit_profile(request):
@@ -213,7 +213,7 @@ def member_edit_profile(request):
             "donor_data":member_object
         }
 
-        return render(request,'appportal/html/member/member_editprofile.html',member_dict)
+        return render(request,'member/member_editprofile.html',member_dict)
 
     
 
