@@ -23,16 +23,21 @@
         /* body{
         background-image:linear-gradient(to right,blue,white,cyan)
         } */
+      #container{
+        display: flex;
+        }
       </style>
   </head>
-  <body>
-      <div style="background-color:brown;width:100%;height:80px;">
-        <div style="background-color:orange;width:33%;height:80px;float:left;"><img style="width:70%;height:110px;margin-left:px;border-radius: 20px;" src="{% static 'appportal/images/lifeline2.png'%}"></div>
-        <div style="background-color:orange;width:33%;height:80px;float:left;"><i class='fas fa-phone-square-alt' style="color:blue;margin-left: 170px;font-size:20px;margin-top:20px"> Whatsapp Number</i><p style="margin-left:170px">(+91)7084452413 </p></div>
-        <div style="background-color:orange;width:34%;height:80px;float:left;"><i class="fa fa-envelope" style="color:blue;margin-left: 190px;font-size:20px;margin-top:20px"> Email</i><p style="margin-left:2
-        0px">shubhamgupta7845@gmail.com </p></div>
 
-      </div>
+  <body>
+
+<div id="container"style="background-color:brown;width:100%;height:80px;">
+  <div class="item" style="background-color:orange;width:33%;height:80px;float:left;"><img style="width:70%;height:110px;margin-left:px;border-radius: 20px;" src="{% static 'appportal/images/lifeline2.png'%}"></div>
+  <div class="item" style="background-color:orange;width:33%;height:80px;float:left;"><i class='fas fa-phone-square-alt' style="color:blue;margin-left: 170px;font-size:20px;margin-top:20px"> Whatsapp Number</i><p style="margin-left:170px">(+91)7084452413 </p></div>
+  <div class="item" style="background-color:orange;width:34%;height:80px;float:left;"><i class="fa fa-envelope" style="color:blue;margin-left: 190px;font-size:20px;margin-top:20px"> Email</i><p style="margin-left:170px;">shubhamgupta7845@gmail.com </p></div>
+
+
+</div>
       
      
       <!-- nav start from here -->
